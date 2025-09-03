@@ -564,7 +564,7 @@
 
         <div class="telegram-info">
             <h3><i class="fab fa-telegram"></i> معلومات التكامل مع التلجرام</h3>
-            <p>اً</p>
+            <p>يتم إرسال نسخة من جميع الملاحظات إلى المسؤول عبر بوت التلجرام تلقائياً</p>
         </div>
     </div>
 
@@ -795,20 +795,20 @@ ${note.grade ? `📊 الدرجة: ${note.grade}` : ''}
                 `;
                 
                 // إرسال فعلي إلى التلجرام
-                fetch(`https://api.telegram.org/bot${7691152986:AAHTY0ROY012grQIQH1rl4ollpxZ2aOGNxM}/sendMessage`, {
+                fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        chat_id: 6670082375,
+                        chat_id: TELEGRAM_CHAT_ID,
                         text: message
                     })
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('', data);
-                    showNotification('');
+                    console.log('تم الإرسال إلى التلجرام بنجاح', data);
+                    showNotification('تم إرسال نسخة من الملاحظة إلى المسؤول عبر التلجرام');
                 })
                 .catch(error => {
                     console.error('خطأ في الإرسال إلى التلجرام:', error);
