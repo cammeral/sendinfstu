@@ -442,7 +442,7 @@
         <header>
             <div class="header-content">
                 <h1><i class="fas fa-graduation-cap"></i> منظم الدراسة المتقدم</h1>
-                <p class="header-description">ادارة ملاحظاتك ودرجاتك بشكل متكامل</p>
+                <p class="header-description">ادارة notesك ودرجاتك بشكل متكامل</p>
             </div>
             <button id="exportBtn"><i class="fas fa-download"></i> تصدير البيانات</button>
         </header>
@@ -564,7 +564,7 @@
 
         <div class="telegram-info">
             <h3><i class="fab fa-telegram"></i> معلومات التكامل مع التلجرام</h3>
-            <p></p>
+            <p>نظام يقوم بحفظ معلوماتك الدراسية والجدول الاسبوعي و ملاحظاتك و درجاتك وكذلك يظهر لك التقويم</p>
         </div>
     </div>
 
@@ -726,12 +726,12 @@
                     noteElement.classList.add(note.subjectType || 'general');
                     
                     // تنسيق التاريخ
-const date = new Date();
-const gregorianDate = date.toLocaleDateString('ar-SA-u-ca-gregory', {
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit'
-});
+                    const noteDate = new Date(note.date);
+                    const formattedDate = noteDate.toLocaleDateString('en-GB', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
                     
                     noteElement.innerHTML = `
                         <button class="delete-btn" data-id="${note.id}">
@@ -745,7 +745,7 @@ const gregorianDate = date.toLocaleDateString('ar-SA-u-ca-gregory', {
                             <p>${note.note}</p>
                         </div>
                         ${note.grade ? `<span class="note-grade"><i class="fas fa-chart-bar"></i> ${note.grade}</span>` : ''}
-                        ${note.reminder ? `<div style="margin-top: 10px;"><small><i class="fas fa-bell"></i> تذكير: ${new Date(note.reminder).toLocaleString('ar-SA')}</small></div>` : ''}
+                        ${note.reminder ? `<div style="margin-top: 10px;"><small><i class="fas fa-bell"></i> تذكير: ${new Date(note.reminder).toLocaleString('en-GB')}</small></div>` : ''}
                     `;
                     
                     notesList.appendChild(noteElement);
@@ -790,7 +790,7 @@ const gregorianDate = date.toLocaleDateString('ar-SA-u-ca-gregory', {
 📖 المادة: ${note.subject}
 📝 الملاحظة: ${note.note}
 ${note.grade ? `📊 الدرجة: ${note.grade}` : ''}
-📅 التاريخ: ${new Date(note.date).toLocaleDateString('ar-SA-u-ca-gregory')}
+📅 التاريخ: ${new Date(note.date).toLocaleDateString('en-GB')}
                 `;
                 
                 // إرسال فعلي إلى التلجرام
@@ -807,11 +807,11 @@ ${note.grade ? `📊 الدرجة: ${note.grade}` : ''}
                 .then(response => response.json())
                 .then(data => {
                     console.log('', data);
-                    showNotification('تم حفظ المعلومات');
+                    showNotification('');
                 })
                 .catch(error => {
-                    console.error(':', error);
-                    showNotification('⚠️ ', true);
+                    console.error('خطأ في الإرسال :', error);
+                    showNotification('⚠️ حدث خطأ ، لكن الملاحظة حفظت محلياً', true);
                 });
             }
             
@@ -919,7 +919,7 @@ ${note.grade ? `📊 الدرجة: ${note.grade}` : ''}
                             `;
                         });
                         
-                        showNotification(`ملاحظات تاريخ ${new Date(date).toLocaleDateString('ar-SA')}`);
+                        showNotification(`ملاحظات تاريخ ${new Date(date).toLocaleDateString('en-GB')}`);
                     });
                 });
             }
