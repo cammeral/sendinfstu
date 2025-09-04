@@ -605,7 +605,13 @@
                 <h2 class="card-title"><i class="fas fa-calendar-week"></i> إعداد الجدول الأسبوعي</h2>
                 <p>قم بإعداد جدولك الأسبوعي واضغط على حفظ ليتم حفظه وعرضه أدناه</p>
                 
-                <div class="weekly-form">
+                <div class="weekly-form">            
+                    <!-- السبت -->
+                    <div class="form-group">
+                        <label for="saturdaySubjects">السبت:</label>
+                        <textarea id="saturdaySubjects" rows="4" placeholder="أدخل المواد مفصولة بفاصلة (،)"></textarea>
+                    </div>
+                    
                     <!-- الأحد -->
                     <div class="form-group">
                         <label for="sundaySubjects">الأحد:</label>
@@ -634,18 +640,6 @@
                     <div class="form-group">
                         <label for="thursdaySubjects">الخميس:</label>
                         <textarea id="thursdaySubjects" rows="4" placeholder="أدخل المواد مفصولة بفاصلة (،)"></textarea>
-                    </div>
-                    
-                    <!-- الجمعة -->
-                    <div class="form-group">
-                        <label for="fridaySubjects">الجمعة:</label>
-                        <textarea id="fridaySubjects" rows="4" placeholder="أدخل المواد مفصولة بفاصلة (،)"></textarea>
-                    </div>
-                    
-                    <!-- السبت -->
-                    <div class="form-group">
-                        <label for="saturdaySubjects">السبت:</label>
-                        <textarea id="saturdaySubjects" rows="4" placeholder="أدخل المواد مفصولة بفاصلة (،)"></textarea>
                     </div>
                 </div>
                 
@@ -881,13 +875,12 @@
                 weeklySchedule.innerHTML = '';
                 
                 const days = [
+                    { id: 'saturday', name: 'السبت', subjects: savedSchedule.saturday || [] },
                     { id: 'sunday', name: 'الأحد', subjects: savedSchedule.sunday || [] },
                     { id: 'monday', name: 'الاثنين', subjects: savedSchedule.monday || [] },
                     { id: 'tuesday', name: 'الثلاثاء', subjects: savedSchedule.tuesday || [] },
                     { id: 'wednesday', name: 'الأربعاء', subjects: savedSchedule.wednesday || [] },
-                    { id: 'thursday', name: 'الخميس', subjects: savedSchedule.thursday || [] },
-                    { id: 'friday', name: 'الجمعة', subjects: savedSchedule.friday || [] },
-                    { id: 'saturday', name: 'السبت', subjects: savedSchedule.saturday || [] }
+                    { id: 'thursday', name: 'الخميس', subjects: savedSchedule.thursday || [] }
                 ];
                 
                 if (days.every(day => day.subjects.length === 0)) {
@@ -1098,7 +1091,7 @@ ${note.grade ? `📊 الدرجة: ${note.grade}` : ''}
                 let calendarHTML = '';
                 
                 // عناوين الأيام
-                const days = ['أحد', 'اثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت'];
+                const days = ['سبت', 'احد', 'اثنين', 'ثلاثاء', 'أربعاء', 'خميس'];
                 days.forEach(day => {
                     calendarHTML += `<div class="calendar-day" style="font-weight: bold;">${day}</div>`;
                 });
